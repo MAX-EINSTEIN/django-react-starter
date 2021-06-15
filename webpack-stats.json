@@ -1,1 +1,1 @@
-{"status":"done","chunks":{"main":["main.js"]},"assets":{"main.js":{"name":"main.js"}}}
+{"status":"done","chunks":{"main":["main.css","main.js"]},"error":"ModuleNotFoundError","message":"Module not found: Error: Can't resolve 'Assets/sass' in 'E:\\Highway\\django-react-starter\\frontend\\src\\components\\navigation'","assets":{"main.css":{"name":"main.css"},"main.js":{"name":"main.js"}}}
