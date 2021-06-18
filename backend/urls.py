@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('backend.apps.core.urls'))
+    path('watch-tower/', admin.site.urls),
+    path('', include('backend.apps.core.urls', namespace='core')),
+    path('blog/', include('backend.apps.blog.urls', namespace='blog')),
+    path('api/', include('backend.apps.api.urls', namespace='api')),
 ]

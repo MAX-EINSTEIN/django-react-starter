@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'webpack_loader',
     'backend.apps.core',
     'backend.apps.users',
+    'backend.apps.blog',
+    'backend.apps.api',
 ]
 
 MIDDLEWARE = [
@@ -80,9 +82,19 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # Uncomment this to use sqlite database
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blogdb',
+        'USER': 'blogdbadmin',
+        'PASSWORD': 'login-role>pass=blogdb@1001',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -126,7 +138,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/')
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'frontend/'),
+    os.path.join(BASE_DIR, 'frontend/assets/'),
 )
 
 # Uncomment if the project requires a media folder

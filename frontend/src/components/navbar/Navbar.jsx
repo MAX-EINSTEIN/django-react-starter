@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from 'Assets/images/logo.svg'
-import 'Assets/sass/navbar.scss'
+import './navbar.scss'
 
 class Navbar extends React.Component {
     render() {

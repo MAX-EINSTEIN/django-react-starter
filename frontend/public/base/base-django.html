@@ -1,5 +1,13 @@
 {% extends './base.html' %}
 {% load static %}
+{% load render_bundle from webpack_loader %}
+
+
+{% block stylesheets %}
+<!-- Webpack rendered CSS -->
+{% render_bundle 'django' 'css' %}
+{% endblock stylesheets %}
+
 
 {% block content %}
 <div class="content">
@@ -7,3 +15,16 @@
     <h4>Rendered by: Django</h4>
 </div>
 {% endblock content %}
+
+
+{% block renderer_label %}
+<div class="renderer_label">
+    <img src="{% static 'images/django.png' %}" alt="django"/>
+</div>
+{% endblock renderer_label %}
+
+
+{% block scripts %}
+<!-- Webpack rendered JS -->
+{% render_bundle 'django' 'js' %}
+{% endblock scripts %}

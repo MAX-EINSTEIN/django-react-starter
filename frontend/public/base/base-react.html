@@ -9,7 +9,7 @@
 
 {% block stylesheets %}
 <!-- Webpack rendered CSS -->
-{% render_bundle 'main' 'css' %}
+{% render_bundle 'react' 'css' %}
 {% endblock stylesheets %}
 
 
@@ -17,8 +17,14 @@
 <div id="react-app"></div>
 {% endblock content %}
 
+{% block renderer_label %}
+<div class="renderer_label">
+    <img src="{% static 'images/react.png' %}" alt="react"/>
+</div>
+{% endblock renderer_label %}
+
 
 {% block scripts %}
 <!-- Webpack rendered JS -->
-{% render_bundle 'main' 'js' %}
+{% render_bundle 'react' 'js' %}
 {% endblock scripts %}
